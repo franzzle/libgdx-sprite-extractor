@@ -1,0 +1,159 @@
+borisjohnsonAnimations.png
+size: 555, 555
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+borisjohnson-hymn-1
+  rotate: false
+  xy: 438, 1
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-1
+  rotate: false
+  xy: 317, 325
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-2
+  rotate: false
+  xy: 497, 1
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-3
+  rotate: false
+  xy: 376, 325
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-4
+  rotate: false
+  xy: 414, 163
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-5
+  rotate: false
+  xy: 473, 161
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-6
+  rotate: false
+  xy: 435, 323
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walkdown-7
+  rotate: false
+  xy: 494, 321
+  size: 57, 158
+  orig: 57, 158
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-1
+  rotate: false
+  xy: 1, 1
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-2
+  rotate: false
+  xy: 1, 163
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-3
+  rotate: false
+  xy: 98, 1
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-4
+  rotate: false
+  xy: 1, 325
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-5
+  rotate: false
+  xy: 98, 163
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walksideways-6
+  rotate: false
+  xy: 195, 1
+  size: 95, 160
+  orig: 95, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-1
+  rotate: false
+  xy: 98, 325
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-2
+  rotate: false
+  xy: 195, 163
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-3
+  rotate: false
+  xy: 292, 1
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-4
+  rotate: false
+  xy: 171, 325
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-5
+  rotate: false
+  xy: 268, 163
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-6
+  rotate: false
+  xy: 365, 1
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-7
+  rotate: false
+  xy: 244, 325
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
+borisjohnson-walkup-8
+  rotate: false
+  xy: 341, 163
+  size: 71, 160
+  orig: 71, 160
+  offset: 0, 0
+  index: -1
