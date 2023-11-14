@@ -19,7 +19,7 @@ public class SpriteExtractor extends ApplicationAdapter {
         // Your Libgdx initialization code, if needed
     }
 
-    public void dumpSprites(TextureAtlas textureAtlas) {
+    public void dumpSprites(String spriteSheetName, TextureAtlas textureAtlas) {
         final Array<TextureAtlas.AtlasRegion> regions = textureAtlas.getRegions();
 
         for (TextureAtlas.AtlasRegion textureRegion : regions) {
@@ -31,12 +31,12 @@ public class SpriteExtractor extends ApplicationAdapter {
                 texture.getTextureData().prepare();
             }
 
-            System.out.println(String.format("x : %d, y: %d,region width : %d, region height : %d",
+            System.out.printf("x : %d, y: %d,region width : %d, region height : %d%n",
                     textureRegion.getRegionX(),
                     textureRegion.getRegionY(),
                     textureRegion.getRegionWidth(),
                     textureRegion.getRegionHeight()
-            ));
+            );
             // Create a Pixmap from the texture region
             Pixmap pixmap = new Pixmap(
                     textureRegion.getRegionWidth(),
@@ -56,7 +56,7 @@ public class SpriteExtractor extends ApplicationAdapter {
                     textureRegion.getRegionHeight() // Width and height of the region
             );
 
-            String fileName = String.format("dump/%s.png", regionName);
+            String fileName = String.format("%s/%s.png",spriteSheetName, regionName);
             PixmapIO.writePNG(Gdx.files.local(fileName), pixmap);
 
             // Dispose of the Pixmap to avoid memory leaks

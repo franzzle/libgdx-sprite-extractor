@@ -4,33 +4,39 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.headless.HeadlessApplication;
 import com.badlogic.gdx.backends.headless.HeadlessApplicationConfiguration;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import org.mockito.Mockito;
+
+import java.nio.file.Path;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        final String localFile = String.format("%s%s.txt", "borisjohnson", "Animations");
-        final String file = App.class.getClassLoader().getResource(localFile).getFile();
+        if(args.length > 0){
+            final String spritesheetName = args[0];
+            final String libgdxSpritesheetFileTxtPath = String.format("%s.txt", spritesheetName);
+            final String libgdxSpritesheetFilePngPath = String.format("%s.png", args[0]);
 
-        HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
-
-        final SpriteExtractor spriteExtractor = new SpriteExtractor(() -> System.exit(0));
-        new HeadlessApplication(spriteExtractor, config);
-
-        Gdx.gl = Mockito.mock(GL20.class);
-
-        final FileHandle textureAtlasFileHandle = Gdx.files.absolute(file);
-        if(textureAtlasFileHandle.exists()){
-            final TextureAtlas textureAtlas = new TextureAtlas(textureAtlasFileHandle);
-            if(textureAtlas != null){
-                System.out.println("YippkajeeMF");
-                spriteExtractor.dumpSprites(textureAtlas);
+            Path pathToTextureAtlasFile = Path.of(libgdxSpritesheetFileTxtPath);
+            if(!pathToTextureAtlasFile.toFile().exists()){
+                System.err.println("Usage: java App animationname without extension, e.g. borisjohnsonAnimations");
+                System.exit(1);
             }
+            if(!Path.of(libgdxSpritesheetFilePngPath).toFile().exists()){
+                System.err.println("Usage: png with prefix 'animationName' is not present");
+                System.exit(1);
+            }
+
+            HeadlessApplicationConfiguration config = new HeadlessApplicationConfiguration();
+            final SpriteExtractor spriteExtractor = new SpriteExtractor(() -> System.exit(0));
+            new HeadlessApplication(spriteExtractor, config);
+
+            Gdx.gl = new MockGL20();
+
+            final String absolutePath = pathToTextureAtlasFile.toAbsolutePath().toString();
+            final FileHandle textureAtlasFileHandle = Gdx.files.absolute(absolutePath);
+            final TextureAtlas textureAtlas = new TextureAtlas(textureAtlasFileHandle);
+            System.out.println("Dumping sprites...");
+            spriteExtractor.dumpSprites(spritesheetName, textureAtlas);
         }
+        System.out.println("Usage: 'java -jar libgdx-sprite-extractor.jar borisjohnsonAnimations' ");
     }
 }
